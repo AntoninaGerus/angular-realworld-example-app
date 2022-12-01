@@ -1,0 +1,39 @@
+{
+  "articles": [
+    {
+      "slug": "Thi-is-some-title-113468",
+      "title": "Thi is some title",
+      "description": "Thi is some description",
+      "body": "Thi is some body",
+      "tagList": [],
+      "createdAt": "2022-11-10T12:09:55.831Z",
+      "updatedAt": "2022-11-10T12:09:55.831Z",
+      "favorited": false,
+      "favoritesCount": 1,
+      "author": {
+        "username": "Antonina",
+        "bio": null,
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "following": false
+      }
+    },
+    {
+      "slug": "some-title-113468",
+      "title": "some title",
+      "description": "some description",
+      "body": "some body",
+      "tagList": [],
+      "createdAt": "2022-11-10T10:55:03.577Z",
+      "updatedAt": "2022-11-10T10:55:03.577Z",
+      "favorited": false,
+      "favoritesCount": 5,
+      "author": {
+        "username": "Antonina",
+        "bio": null,
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "following": false
+      }
+    }
+  ],
+  "articlesCount": 2
+}
