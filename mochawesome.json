@@ -1,14 +1,14 @@
 {
   "stats": {
-    "suites": 8,
-    "tests": 8,
-    "passes": 8,
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2022-11-30T11:39:43.264Z",
-    "end": "2022-11-30T12:12:08.367Z",
-    "duration": 34641,
-    "testsRegistered": 8,
+    "start": "2022-12-02T14:28:46.893Z",
+    "end": "2022-12-02T14:28:58.921Z",
+    "duration": 10071,
+    "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "78733569-e16b-48aa-8d84-c4153bb90a21",
+      "uuid": "fb145958-7752-45a8-ab26-18dfc366e5df",
       "title": "",
-      "fullFile": "cypress\\e2e\\secondTest.cy.js",
-      "file": "cypress\\e2e\\secondTest.cy.js",
+      "fullFile": "cypress/e2e/secondTest.cy.js",
+      "file": "cypress/e2e/secondTest.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "8c5e940d-a0fc-4564-b1f0-c0a68dc0290b",
+          "uuid": "acc257d6-5f5f-429b-bb90-bcb21361e087",
           "title": "test log out",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "verify logging out",
               "fullTitle": "test log out verify logging out",
               "timedOut": null,
-              "duration": 2607,
+              "duration": 2644,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.contains(\"Settings\").click();\ncy.contains(\"Or click here to logout\").click();\ncy.get(\".navbar-nav\").should(\"contain\", \"Sign up\");",
               "err": {},
-              "uuid": "51c246a3-0a99-410e-9fbe-310d67eb99e9",
-              "parentUUID": "8c5e940d-a0fc-4564-b1f0-c0a68dc0290b",
+              "uuid": "7b9214d4-e22c-46a6-8abc-a01c1f02d60a",
+              "parentUUID": "acc257d6-5f5f-429b-bb90-bcb21361e087",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "51c246a3-0a99-410e-9fbe-310d67eb99e9"
+            "7b9214d4-e22c-46a6-8abc-a01c1f02d60a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2607,
+          "duration": 2644,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,16 +76,16 @@
       "_timeout": 2000
     },
     {
-      "uuid": "95b5ec2c-3392-484b-8db6-97bfb6b12cc4",
+      "uuid": "e2725292-ae46-4a88-a745-d814ebcaf4b1",
       "title": "",
-      "fullFile": "cypress\\e2e\\firstTest.cy.js",
-      "file": "cypress\\e2e\\firstTest.cy.js",
+      "fullFile": "cypress/e2e/firstTest.cy.js",
+      "file": "cypress/e2e/firstTest.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "e4ffaf42-eccc-4380-ac77-59d40e41580c",
+          "uuid": "1e411ddc-b41b-46fc-a596-86c061699f3c",
           "title": "test with backend",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "delete a new article in a global feed",
               "fullTitle": "test with backend delete a new article in a global feed",
               "timedOut": null,
-              "duration": 5274,
+              "duration": 7427,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -105,368 +105,20 @@
               "context": null,
               "code": "const bodyRequest = {\n  article: {\n    tagList: [],\n    title: \"some title\",\n    description: \"some description\",\n    body: \"some body\"\n  }\n};\ncy.get(\"@token\").then(token => {\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles/\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"POST\",\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n  });\n  cy.contains(\"Global Feed\").click();\n  cy.get(\".article-preview\").first().click();\n  cy.get(\".article-actions\").contains(\"Delete Article\").click();\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles?limit=10&offset=0\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"GET\"\n  }).its(\"body\").then(body => {\n    cy.wait(20);\n    expect(body.articles[0].title).not.to.equal(\"some title\");\n  });\n});",
               "err": {},
-              "uuid": "b4ba14be-d4f7-4ea1-af76-83e31bd78df3",
-              "parentUUID": "e4ffaf42-eccc-4380-ac77-59d40e41580c",
+              "uuid": "d19c1c11-dbdd-432b-8345-7eef6c970e37",
+              "parentUUID": "1e411ddc-b41b-46fc-a596-86c061699f3c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b4ba14be-d4f7-4ea1-af76-83e31bd78df3"
+            "d19c1c11-dbdd-432b-8345-7eef6c970e37"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5274,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "6ee8a1d4-b4d2-4d81-a9cd-70bdb2d46df8",
-      "title": "",
-      "fullFile": "cypress\\e2e\\secondTest.cy.js",
-      "file": "cypress\\e2e\\secondTest.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "c975bf6e-020e-4b28-8545-8844345db126",
-          "title": "test log out",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "verify logging out",
-              "fullTitle": "test log out verify logging out",
-              "timedOut": null,
-              "duration": 2507,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "cy.contains(\"Settings\").click();\ncy.contains(\"Or click here to logout\").click();\ncy.get(\".navbar-nav\").should(\"contain\", \"Sign up\");",
-              "err": {},
-              "uuid": "1c5e7758-be90-4e8e-bcc5-737f0d81b00e",
-              "parentUUID": "c975bf6e-020e-4b28-8545-8844345db126",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "1c5e7758-be90-4e8e-bcc5-737f0d81b00e"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 2507,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "aaf42c41-1c36-4099-a5dc-accded4f984a",
-      "title": "",
-      "fullFile": "cypress\\e2e\\firstTest.cy.js",
-      "file": "cypress\\e2e\\firstTest.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "b58d4ed4-df56-48c9-9e6f-aaa10faa3ad2",
-          "title": "test with backend",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "delete a new article in a global feed",
-              "fullTitle": "test with backend delete a new article in a global feed",
-              "timedOut": null,
-              "duration": 4915,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const bodyRequest = {\n  article: {\n    tagList: [],\n    title: \"some title\",\n    description: \"some description\",\n    body: \"some body\"\n  }\n};\ncy.get(\"@token\").then(token => {\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles/\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"POST\",\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n  });\n  cy.contains(\"Global Feed\").click();\n  cy.get(\".article-preview\").first().click();\n  cy.get(\".article-actions\").contains(\"Delete Article\").click();\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles?limit=10&offset=0\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"GET\"\n  }).its(\"body\").then(body => {\n    cy.wait(20);\n    expect(body.articles[0].title).not.to.equal(\"some title\");\n  });\n});",
-              "err": {},
-              "uuid": "2bc58e38-09ee-4691-b2f7-ce6e97df26b9",
-              "parentUUID": "b58d4ed4-df56-48c9-9e6f-aaa10faa3ad2",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "2bc58e38-09ee-4691-b2f7-ce6e97df26b9"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 4915,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "d49fc86e-9c24-4bb2-bb97-aa8305286cbf",
-      "title": "",
-      "fullFile": "cypress\\e2e\\secondTest.cy.js",
-      "file": "cypress\\e2e\\secondTest.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "47b46fcb-10a7-481a-8bde-afa1ee85e9e4",
-          "title": "test log out",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "verify logging out",
-              "fullTitle": "test log out verify logging out",
-              "timedOut": null,
-              "duration": 2486,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "cy.contains(\"Settings\").click();\ncy.contains(\"Or click here to logout\").click();\ncy.get(\".navbar-nav\").should(\"contain\", \"Sign up\");",
-              "err": {},
-              "uuid": "de1d7169-f007-498e-a717-91d6de105596",
-              "parentUUID": "47b46fcb-10a7-481a-8bde-afa1ee85e9e4",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "de1d7169-f007-498e-a717-91d6de105596"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 2486,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "ebc141fa-d6df-4a0e-b315-084aca9b6ea3",
-      "title": "",
-      "fullFile": "cypress\\e2e\\firstTest.cy.js",
-      "file": "cypress\\e2e\\firstTest.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "5d1bbafb-4b96-4aac-a32b-6079555ee41f",
-          "title": "test with backend",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "delete a new article in a global feed",
-              "fullTitle": "test with backend delete a new article in a global feed",
-              "timedOut": null,
-              "duration": 7162,
-              "state": "passed",
-              "speed": "medium",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const bodyRequest = {\n  article: {\n    tagList: [],\n    title: \"some title\",\n    description: \"some description\",\n    body: \"some body\"\n  }\n};\ncy.get(\"@token\").then(token => {\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles/\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"POST\",\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n  });\n  cy.contains(\"Global Feed\").click();\n  cy.get(\".article-preview\").first().click();\n  cy.get(\".article-actions\").contains(\"Delete Article\").click();\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles?limit=10&offset=0\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"GET\"\n  }).its(\"body\").then(body => {\n    cy.wait(20);\n    expect(body.articles[0].title).not.to.equal(\"some title\");\n  });\n});",
-              "err": {},
-              "uuid": "3d5f71a3-6bbc-455b-abe8-f06af25aa121",
-              "parentUUID": "5d1bbafb-4b96-4aac-a32b-6079555ee41f",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "3d5f71a3-6bbc-455b-abe8-f06af25aa121"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 7162,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "e9ddccea-c73c-41ed-a6e2-e9c2eabc935d",
-      "title": "",
-      "fullFile": "cypress\\e2e\\secondTest.cy.js",
-      "file": "cypress\\e2e\\secondTest.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "2492f35a-017c-449f-89da-360631c42ed7",
-          "title": "test log out",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "verify logging out",
-              "fullTitle": "test log out verify logging out",
-              "timedOut": null,
-              "duration": 2585,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "cy.contains(\"Settings\").click();\ncy.contains(\"Or click here to logout\").click();\ncy.get(\".navbar-nav\").should(\"contain\", \"Sign up\");",
-              "err": {},
-              "uuid": "88fdb873-52bc-4607-ab45-8a54b7060cff",
-              "parentUUID": "2492f35a-017c-449f-89da-360631c42ed7",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "88fdb873-52bc-4607-ab45-8a54b7060cff"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 2585,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 2000
-    },
-    {
-      "uuid": "60ba77fb-fc82-4bc2-bbcd-89768897c5e2",
-      "title": "",
-      "fullFile": "cypress\\e2e\\firstTest.cy.js",
-      "file": "cypress\\e2e\\firstTest.cy.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "3cdd0e4f-4de1-412c-917e-6b2d02eaa7b9",
-          "title": "test with backend",
-          "fullFile": "",
-          "file": "",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "delete a new article in a global feed",
-              "fullTitle": "test with backend delete a new article in a global feed",
-              "timedOut": null,
-              "duration": 7105,
-              "state": "passed",
-              "speed": "medium",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "const bodyRequest = {\n  article: {\n    tagList: [],\n    title: \"some title\",\n    description: \"some description\",\n    body: \"some body\"\n  }\n};\ncy.get(\"@token\").then(token => {\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles/\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"POST\",\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n  });\n  cy.contains(\"Global Feed\").click();\n  cy.get(\".article-preview\").first().click();\n  cy.get(\".article-actions\").contains(\"Delete Article\").click();\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles?limit=10&offset=0\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"GET\"\n  }).its(\"body\").then(body => {\n    cy.wait(20);\n    expect(body.articles[0].title).not.to.equal(\"some title\");\n  });\n});",
-              "err": {},
-              "uuid": "004fddaa-f0be-45a5-a156-01392e4812ea",
-              "parentUUID": "3cdd0e4f-4de1-412c-917e-6b2d02eaa7b9",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "004fddaa-f0be-45a5-a156-01392e4812ea"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 7105,
+          "duration": 7427,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

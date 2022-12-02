@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-11-30T19:57:03.317Z",
-    "end": "2022-11-30T19:57:07.022Z",
-    "duration": 3705,
+    "start": "2022-12-02T14:28:56.202Z",
+    "end": "2022-12-02T14:28:58.921Z",
+    "duration": 2719,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "9c45b959-080b-4e71-ad7e-956124b52a5a",
+      "uuid": "fb145958-7752-45a8-ab26-18dfc366e5df",
       "title": "",
-      "fullFile": "cypress\\e2e\\secondTest.cy.js",
-      "file": "cypress\\e2e\\secondTest.cy.js",
+      "fullFile": "cypress/e2e/secondTest.cy.js",
+      "file": "cypress/e2e/secondTest.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "37938368-4c1e-4c82-a7fa-55d055aa0a79",
+          "uuid": "acc257d6-5f5f-429b-bb90-bcb21361e087",
           "title": "test log out",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "verify logging out",
               "fullTitle": "test log out verify logging out",
               "timedOut": null,
-              "duration": 3625,
+              "duration": 2644,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.contains(\"Settings\").click();\ncy.contains(\"Or click here to logout\").click();\ncy.get(\".navbar-nav\").should(\"contain\", \"Sign up\");",
               "err": {},
-              "uuid": "7e38f532-76c2-4142-b11e-74339532d066",
-              "parentUUID": "37938368-4c1e-4c82-a7fa-55d055aa0a79",
+              "uuid": "7b9214d4-e22c-46a6-8abc-a01c1f02d60a",
+              "parentUUID": "acc257d6-5f5f-429b-bb90-bcb21361e087",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7e38f532-76c2-4142-b11e-74339532d066"
+            "7b9214d4-e22c-46a6-8abc-a01c1f02d60a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3625,
+          "duration": 2644,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

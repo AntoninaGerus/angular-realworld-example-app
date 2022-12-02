@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-11-30T19:56:44.174Z",
-    "end": "2022-11-30T19:57:00.475Z",
-    "duration": 16301,
+    "start": "2022-12-02T14:28:46.893Z",
+    "end": "2022-12-02T14:28:54.357Z",
+    "duration": 7464,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "943f21ce-99a0-4971-9f1a-c00a2a584189",
+      "uuid": "e2725292-ae46-4a88-a745-d814ebcaf4b1",
       "title": "",
-      "fullFile": "cypress\\e2e\\firstTest.cy.js",
-      "file": "cypress\\e2e\\firstTest.cy.js",
+      "fullFile": "cypress/e2e/firstTest.cy.js",
+      "file": "cypress/e2e/firstTest.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "fc82a0ab-d4a0-49f7-a9ef-15e8dfb156a0",
+          "uuid": "1e411ddc-b41b-46fc-a596-86c061699f3c",
           "title": "test with backend",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "delete a new article in a global feed",
               "fullTitle": "test with backend delete a new article in a global feed",
               "timedOut": null,
-              "duration": 6791,
+              "duration": 7427,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const bodyRequest = {\n  article: {\n    tagList: [],\n    title: \"some title\",\n    description: \"some description\",\n    body: \"some body\"\n  }\n};\ncy.get(\"@token\").then(token => {\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles/\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"POST\",\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n  });\n  cy.contains(\"Global Feed\").click();\n  cy.get(\".article-preview\").first().click();\n  cy.get(\".article-actions\").contains(\"Delete Article\").click();\n  cy.request({\n    url: Cypress.env(\"apiUrl\") + \"/api/articles?limit=10&offset=0\",\n    headers: {\n      Authorization: \"Token \" + token\n    },\n    method: \"GET\"\n  }).its(\"body\").then(body => {\n    cy.wait(20);\n    expect(body.articles[0].title).not.to.equal(\"some title\");\n  });\n});",
               "err": {},
-              "uuid": "ef0702c8-227e-41d6-8214-7bb8dafb3e0d",
-              "parentUUID": "fc82a0ab-d4a0-49f7-a9ef-15e8dfb156a0",
+              "uuid": "d19c1c11-dbdd-432b-8345-7eef6c970e37",
+              "parentUUID": "1e411ddc-b41b-46fc-a596-86c061699f3c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ef0702c8-227e-41d6-8214-7bb8dafb3e0d"
+            "d19c1c11-dbdd-432b-8345-7eef6c970e37"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6791,
+          "duration": 7427,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
